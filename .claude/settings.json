@@ -2,6 +2,7 @@
   "permissions": {
     "defaultMode": "auto",
     "allow": [
+      "Bash(*)",
       "Bash(./*)",
       "Bash(xxd *)",
       "Edit(./*)",
