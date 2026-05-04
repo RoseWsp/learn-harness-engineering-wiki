@@ -1,20 +1,44 @@
 # Harness 刻意训练指南
 
-**TL;DR** 别从理论开始，从你手上的项目开始。6 周渐进式训练，每周一个聚焦点，每步都有对照实验。核心目标不是"学会 harness"，而是**把隐含知识变成显性规则、把主观判断变成自动化背压**。
+**TL;DR** 码农在 AI 时代面临双重要求：说清楚的能力和代码判断力都不能丢。6 周渐进式训练，每周一个聚焦点，每步都有对照实验。核心目标不是"学会 harness"，而是**把隐含知识变成显性规则、把主观判断变成自动化背压**。
 
-## 为什么需要刻意训练
+## 从一个码农的真实困境说起
 
-传统码农的技能栈是：需求 → 代码 → 人工验证。Harness 时代变成了：需求 → spec → harness → Agent 实现 → 自动化验证。中间多出两层（spec 和 harness），而这两层恰恰是以前可以跳过的——因为"说不清楚，代码上见"。
+以前说不清楚需求？没关系，自己写代码，跑起来，点两下，能用就行。代码是最终的解释，写的过程本身就是把模糊变清晰的过程。
 
-现在跳不过了。[[agents-md|AGENTS.md]] 写不好，Agent 就乱来；[[e2e-vs-unit-testing|测试]]没跟上，Agent 提交的坏代码就挡不住；[[progress-md|状态文件]]没维护，新会话就从零开始。这些都是**说清楚的能力**的工程化载体。
+现在不行了。Agent 不会"自己理解你意思"——它真的按你写的来。你写模糊，它就做模糊。你漏说一个约定，它就不知道那个约定。以前说不清楚的代价是沟通成本，现在说不清楚的代价是返工成本。而且这个返工不是你返工——是 Agent 返工，但它自己不知道要返工，它还觉得自己做完了。这就是 [[premature-victory|过早宣布胜利]]。
 
-但同时，[[overconfidence-bias|代码判断力不能丢]]——Agent 写出来的东西你得能看懂、能判断、能归因。两条线同时拉。
+最危险的不是"不会用 AI"，而是**用 AI 用久了，代码判断力慢慢退化，自己还不知道**：不看 diff 就接受 Agent 的提交；看了 diff 但看不出问题；看出问题但说不清该怎么改，只能"再跑一轮试试"；架构决策交给 Agent，自己丧失了做 trade-off 的能力。这就像导航用久了，路感就没了。
+
+## Harness 和 Ralph 的关系：道与术
+
+在开始训练之前，先理清概念。
+
+[[harness-defined|Harness Engineering 是学科]]——它回答"为什么 Agent 不靠谱"和"需要哪五个子系统（Instructions、Tools、Environment、State、Feedback）"。它是诊断框架：Agent 失败了，你归因到哪一层，修什么，怎么度量。
+
+[[ralph-loop|Ralph 是一个实现]]——它用最少的机制把 Harness 的核心原则落地了：一个 dumb bash 循环不断重启 Agent，plan 文件作为迭代间唯一共享状态。Ralph 不是 Harness 的替代品或竞争者，它是**一个把 Harness 原则工程化的跑法**。
+
+类比：Harness = 软件工程的"测试很重要""要 CI""要 code review"这些原则。Ralph = 一个具体的 GitHub Actions workflow + 分支保护规则 + PR template。你不会问"GitHub Actions 和软件工程哪个好"——前者是后者的工具化。
+
+而且 Ralph 并没有覆盖 Harness 的全部。比如 Environment 子系统（依赖版本、服务就绪），Ralph 没有特别的机制；[[sprint-contract|Observability]]（冲刺合约、评估量表）Ralph 也只是浅尝。Ralph 最强的地方是 [[progress-md|State]]（plan 文件做交接）和 [[backpressure-signals|Feedback]]（测试做背压），其他子系统靠的是通用的 sandbox 和 AGENTS.md 最佳实践。
+
+但 Ralph 提供了一个核心洞察：**上下文是唯一重要的东西。** 200K token 窗口实际可用约 176K，40-60% 利用率是推理质量的"聪明区"。一轮一个任务 = 100% 聪明区利用。主 Agent 当调度员，[[subagent-scheduling|subagent 干活]]，上游确定性信号 + 下游背压 = 收敛。这些不是抽象原则，是可操作的工程决策。
+
+## 两条线同时拉
+
+AI 时代码农的核心能力是**双轨**的：
+
+**第一条线：说清楚的能力。** 以前这是 nice-to-have，现在是 must-have。[[agents-md|AGENTS.md]]、spec、验收标准——全是"说清楚"的载体。写不好这些，Agent 就是在没有地图的情况下开车。
+
+**第二条线：代码判断力不能丢。** Agent 写了代码，你得能判断它对不对、架构合不合理、有没有隐患。如果你自己代码能力退化了，你就变成外行审内行——看不出问题，只能看测试过没过。但测试只验证你想到的，验证不了你没想到的。
+
+这两条线其实是**同一件事的两面**：能说清楚 = 说明你真的理解了。写不出清晰的 spec，多半是因为你自己也没想清楚。写 AGENTS.md 的过程逼你把隐含知识显性化——这本身就是深度思考。而代码判断力 = 读懂 Agent 产出的能力。每次看 diff，问自己：它为什么这么做？有没有更简单的做法？边界情况考虑了吗？答不上来，就说明你的判断力在这块有缺口。
 
 ## 训练原则
 
 1. **对照实验**：每个练习都跑两次——一次没 harness，一次有 harness。量化差距，而不是凭感觉
-2. **修 harness，不修代码**：看到问题，先问"harness 哪一层没挡住"，而不是上手改代码
-3. **60 行上限**：[[agents-md|AGENTS.md]] 超过 60 行就砍。[[progressive-disclosure|中间的内容会被忽略]]
+2. **修 harness，不修代码**：看到问题，先问"harness 哪一层没挡住"，而不是上手改代码。修了代码，下次还犯；修了 harness，下次自动避坑
+3. **60 行上限**：[[agents-md|AGENTS.md]] 超过 60 行就砍。[[lost-in-middle-effect|中间的内容会被忽略]]
 4. **说清楚才算想清楚**：写不出 spec 的地方，说明你自己也没想清楚。停下来想，别让 Agent 猜
 
 ## 第 1 周：说清楚——写 AGENTS.md
@@ -39,7 +63,7 @@
 
 ## 第 2 周：挡住坏代码——加测试背压
 
-**目标**：Agent 提交代码后，有自动化手段挡住坏代码。
+**目标**：Agent 提交代码后，有自动化手段挡住坏代码。wiki 原话：**"Feedback has the highest ROI — verification commands are the single most impactful thing you can add."**
 
 **对照实验**：
 
@@ -120,7 +144,7 @@
 | 改了 A 坏了 B | Feedback | 补 e2e 测试 |
 | 新会话不知道上次做哪了 | State | 检查 PROGRESS.md |
 
-**核心心态**：看到问题，别上手改代码，改 harness。
+**核心心态**：看到问题，别上手改代码，改 harness。这就是 [[diagnostic-loop]]——归因到层，修，度量。
 
 ## 第 6 周：Ablation——拆掉看看什么在撑着
 
@@ -139,7 +163,7 @@
 | 无 WIP 限制 | Scope 层 | Agent 贪多了吗？提前宣布胜利了吗？ |
 | 全拆 | 全部 | 跟完整 harness 差多少？ |
 
-这就是 [[diagnostic-loop]] 的量化版：归因到层，修，度量。
+这正是 Anthropic 做过的实验的逻辑：同一个模型，有 harness 和没 harness，产出天差地别。现在你自己亲手验证每一层的贡献。
 
 ## 持续训练：日常中的微练习
 
@@ -163,4 +187,4 @@
 
 ---
 
-[[agents-md]] · [[e2e-vs-unit-testing]] · [[progress-md]] · [[wip-limit]] · [[pass-state-gating]] · [[three-layer-termination]] · [[diagnostic-loop]] · [[ralph-loop]] · [[harness-rot]] · [[cold-start-test]] · [[lost-in-middle-effect]] · [[overconfidence-bias]]
+[[harness-defined]] · [[agents-md]] · [[e2e-vs-unit-testing]] · [[progress-md]] · [[wip-limit]] · [[pass-state-gating]] · [[three-layer-termination]] · [[diagnostic-loop]] · [[ralph-loop]] · [[subagent-scheduling]] · [[backpressure-signals]] · [[harness-rot]] · [[cold-start-test]] · [[lost-in-middle-effect]] · [[overconfidence-bias]] · [[premature-victory]]
