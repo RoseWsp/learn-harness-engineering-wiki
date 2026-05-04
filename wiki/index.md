@@ -15,6 +15,8 @@
 - [[lecture-11-observability]] — Runtime and process observability reduce retries
 - [[lecture-12-clean-state]] — Every session must leave a clean state
 - [[ralph-playbook]] — The Ralph pattern: loop-based autonomous coding with plan files and backpressure
+- [[skiplabs-codegen-as-compiler]] — Treat agent output like compiler output: trust the process, not the artifact
+- [[skiplabs-future-of-tools]] — Code was never for machines — until now: tools will bifurcate for humans vs agents
 
 ## Core Concepts
 
@@ -52,6 +54,12 @@
 - [[acceptance-driven-backpressure]] — Derive test requirements from acceptance criteria before implementation
 - [[sprint-contract]] — Pre-coding agreement on scope, standards, exclusions
 - [[evaluator-rubric]] — Structured quality scoring framework
+
+## Lights-Out Challenge
+
+- [[codegen-as-compiler-output]] — Nobody reviews compiler output; build the same trust apparatus for agents
+- [[agent-native-tooling]] — Tools will bifurcate: human-optimized vs agent-optimized (strict, verbose, formal)
+- [[lights-out-challenge]] — The endgame of harness: infrastructure that makes human presence unnecessary
 
 ## Practice
 

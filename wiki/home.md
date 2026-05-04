@@ -140,8 +140,14 @@ The key insight: **context is everything.** A 200K-token window is ~176K usable;
 
 Further refinements: [[acceptance-driven-backpressure|acceptance-driven backpressure]] derives test requirements from specs before implementation, and [[story-map-slc|story mapping]] frames product scope as user journeys sliced into Simple/Lovable/Complete releases.
 
+## The lights-out challenge
+
+Everything above assumes a human is still in the loop — reading diffs, reviewing specs, making judgment calls. SkipLabs challenges this assumption directly: [[codegen-as-compiler-output|nobody reviews compiler output]], and when the verification apparatus is strong enough, nobody will review agent output either. The question isn't "should we trust agents?" but "have we built the infrastructure that makes that trust reasonable?" Right now, we haven't.
+
+Three implications shake the current harness model: (1) **"Human reads code" is a transitional state** — long-term, code judgment shifts from quality gate to anomaly investigation, just like reading assembly today. (2) **AGENTS.md is the PHP of harness** — natural language instructions are the most practical carrier today, but [[agent-native-tooling|formal specifications and agent-optimized tooling]] are the next step. (3) **"Good enough" testing isn't good enough** — agents produce plausible-but-wrong code at 50x the rate; test coverage and [[backpressure-signals|AI-checks-AI pipelines]] must become first-class CI infrastructure. The endgame: [[lights-out-challenge|harness as trust infrastructure that makes human presence unnecessary]]. ([[skiplabs-codegen-as-compiler]], [[skiplabs-future-of-tools]])
+
 ## Sources
 
 This wiki is based on the [Learn Harness Engineering](https://walkinglabs.github.io/learn-harness-engineering/) course by WalkingLabs, which synthesizes research from [OpenAI](https://openai.com/index/harness-engineering/) and [Anthropic](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents).
 
-[[lecture-01-capable-agents-still-fail]] · [[lecture-02-what-harness-actually-is]] · [[lecture-03-repo-as-system-of-record]] · [[lecture-04-giant-instruction-file-fails]] · [[lecture-05-continuity]] · [[lecture-06-initialization-phase]] · [[lecture-07-task-boundaries]] · [[lecture-08-feature-lists]] · [[lecture-09-premature-victory]] · [[lecture-10-e2e-testing]] · [[lecture-11-observability]] · [[lecture-12-clean-state]] · [[ralph-playbook]]
+[[lecture-01-capable-agents-still-fail]] · [[lecture-02-what-harness-actually-is]] · [[lecture-03-repo-as-system-of-record]] · [[lecture-04-giant-instruction-file-fails]] · [[lecture-05-continuity]] · [[lecture-06-initialization-phase]] · [[lecture-07-task-boundaries]] · [[lecture-08-feature-lists]] · [[lecture-09-premature-victory]] · [[lecture-10-e2e-testing]] · [[lecture-11-observability]] · [[lecture-12-clean-state]] · [[ralph-playbook]] · [[skiplabs-codegen-as-compiler]] · [[skiplabs-future-of-tools]]

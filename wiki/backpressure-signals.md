@@ -45,4 +45,6 @@ Backpressure must be **specific about WHAT to verify** (outcomes) but **silent o
 
 Backpressure is the [[harness-defined|Feedback subsystem]] made operational. Without it, [[overconfidence-bias|the agent's overconfidence]] goes unchecked. The [[sprint-contract]] and [[evaluator-rubric]] are pre-coding ways to define what the backpressure should check; the actual test commands in `AGENTS.md` are how you wire it in.
 
+SkipLabs argues that [[codegen-as-compiler-output|AI-checks-AI pipelines should be first-class CI infrastructure]], not optional enhancements. When agents produce plausible-but-wrong code at 50x the rate of humans, the test suite that caught human mistakes needs to be substantially more comprehensive. LLM-as-judge graduates from "nice-to-have" to "non-negotiable."
+
 ([[ralph-playbook]])

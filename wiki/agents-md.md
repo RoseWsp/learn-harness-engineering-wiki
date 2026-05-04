@@ -52,3 +52,4 @@ The BUILDING prompt says "run tests" generically; AGENTS.md specifies the actual
 - [[lecture-03-repo-as-system-of-record]] — repo as the single source of truth
 - [[cold-start-test]] — the five questions AGENTS.md must answer
 - [[ralph-loop]] — where AGENTS.md is loaded every iteration
+- [[codegen-as-compiler-output]] — AGENTS.md as natural language is the "PHP of harness"; formal specifications are the next step

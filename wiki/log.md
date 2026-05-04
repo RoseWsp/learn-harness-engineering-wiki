@@ -34,3 +34,22 @@ Ingested the Ralph Playbook from `raw/how-to-ralph-wiggum/` — Clayton Farr's d
 ## [2026-05-05 10:00] create | Harness 刻意训练指南
 
 Created [[harness-deliberate-practice]] — a 6-week progressive training guide for developers to build harness engineering skills through deliberate practice. Covers AGENTS.md writing, test backpressure, state persistence, WIP=1 scope control, Ralph loop operation, and ablation experiments. Updated index.md and home.md with cross-links.
+
+## [2026-05-05 11:30] ingest + create | SkipLabs Lights-Out Challenge
+
+Ingested two SkipLabs articles (Hugo Venturini) that challenge the current harness model's assumption that humans remain in the loop. Created source-summary pages and three concept pages analyzing the implications.
+
+**Source pages created:**
+- skiplabs-codegen-as-compiler — Treat agent output like compiler output
+- skiplabs-future-of-tools — Code was never for machines — until now
+
+**Concept pages created:**
+- codegen-as-compiler-output — Compiler analogy: trust the process, not the artifact
+- agent-native-tooling — Tools will bifurcate for humans vs agents
+- lights-out-challenge — The endgame: harness as trust infrastructure that makes human presence unnecessary
+
+**Cross-links added:**
+- home.md → lights-out challenge section with three implications
+- agents-md → codegen-as-compiler-output (formal spec as next step)
+- backpressure-signals → codegen-as-compiler-output (AI-checks-AI as first-class CI)
+- harness-deliberate-practice → lights-out-challenge (code judgment long-term positioning)
