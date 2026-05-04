@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Bash(./*)",
+      "Bash(xxd *)",
+      "Edit(./*)",
+      "Read(./*)",
+      "Glob(./*)",
+      "Grep(./*)",
+      "Agent(*)",
+      "TodoWrite(*)",
+      "Skill(*)",
+      "AskUserQuestion(*)",
+      "CronCreate(*)",
+      "CronDelete(*)",
+      "CronList(*)",
+      "EnterPlanMode(*)",
+      "ExitPlanMode(*)",
+      "EnterWorktree(*)",
+      "ExitWorktree(*)",
+      "NotebookEdit(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "Bash(npm test)",
+      "Bash(python --version 2>&1 && pip --version 2>&1)",
+      "Bash(cd d:/github.com/wikirose && python scripts/daily-digest.py 2>&1)"
+    ]
+  }
+}
