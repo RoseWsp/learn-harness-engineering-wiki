@@ -53,6 +53,10 @@
 - [[sprint-contract]] — Pre-coding agreement on scope, standards, exclusions
 - [[evaluator-rubric]] — Structured quality scoring framework
 
+## Practice
+
+- [[harness-deliberate-practice]] — 6-week progressive training guide: from writing AGENTS.md to running full Ralph loops with ablation studies
+
 ## The Ralph Pattern
 
 - [[ralph-loop]] — A dumb bash loop that restarts the agent with fresh context; plan file is shared state

@@ -118,6 +118,10 @@ Sessions are finite. Without [[progress-md|structured state persistence]], every
 
 Without runtime signals and process artifacts, agents make decisions under uncertainty. [[sprint-contract|Sprint contracts]] and [[evaluator-rubric|evaluator rubrics]] turn subjective evaluation into quantifiable metrics. ([[lecture-11-observability]])
 
+## How to train
+
+Reading about harness engineering isn't enough — you need to build the environments yourself and observe how agents behave under different rules. The [[harness-deliberate-practice]] guide is a 6-week progressive program: each week adds one harness subsystem, every exercise runs as a controlled experiment (with harness vs. without), and the final week is an ablation study that shows which components actually matter. The core training principle: **when the agent fails, don't fix the code — fix the harness.**
+
 ## A concrete implementation: the Ralph pattern
 
 The principles above aren't just theory. The [[ralph-loop|Ralph pattern]] (by Geoffrey Huntley, documented in the [[ralph-playbook]]) is a working implementation of most harness principles in one simple mechanism: a dumb bash loop that restarts an LLM agent with fresh context, using a plan file on disk as the only shared state.

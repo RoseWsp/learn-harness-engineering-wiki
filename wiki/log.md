@@ -30,3 +30,7 @@ Ingested the Ralph Playbook from `raw/how-to-ralph-wiggum/` — Clayton Farr's d
 - e2e-vs-unit-testing → backpressure-signals, acceptance-driven-backpressure
 - context-anxiety → ralph-loop, subagent-scheduling
 - overconfidence-bias → backpressure-signals, acceptance-driven-backpressure
+
+## [2026-05-05 10:00] create | Harness 刻意训练指南
+
+Created [[harness-deliberate-practice]] — a 6-week progressive training guide for developers to build harness engineering skills through deliberate practice. Covers AGENTS.md writing, test backpressure, state persistence, WIP=1 scope control, Ralph loop operation, and ablation experiments. Updated index.md and home.md with cross-links.
