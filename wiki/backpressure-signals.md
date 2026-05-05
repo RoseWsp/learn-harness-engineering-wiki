@@ -49,4 +49,12 @@ SkipLabs argues that [[codegen-as-compiler-output|AI-checks-AI pipelines should 
 
 Osmani's Agent Skills encode the same principle: every skill ends with concrete evidence (test passes, build clean, runtime trace shows expected behavior, reviewer signs off). "Looks right" is never enough. Skills make backpressure the exit condition of every workflow. ([[agent-skills-osmani]])
 
+## Google-scale engineering as backpressure
+
+Several Google engineering practices operate as implicit backpressure on agents:
+
+- **Hyrum's Law**: Every observable behavior of your API will eventually be depended on by someone. Design APIs with this in mind — the agent's backpressure (tests, consumers) will expose coupling you didn't plan for.
+- **Shift Left + Feature Flags**: Catch problems early (Shift Left) and decouple deployment from release (feature flags). For agents, this means verification should happen at commit time, not at merge time, and new code should land behind flags so incomplete work doesn't break production.
+- **Code-as-liability**: Every line of code you keep is a line you must maintain forever. Prefer smaller surface area. For agents, this is an argument against overreach — every line the agent generates is a liability, so generate fewer lines and delete more. ([[agent-skills-osmani]])
+
 ([[ralph-playbook]])

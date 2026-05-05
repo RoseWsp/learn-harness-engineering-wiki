@@ -24,6 +24,26 @@ Leave any out and reliability drops. ([[lecture-02-what-harness-actually-is]])
 | State | Prep station | PROGRESS.md, git |
 | Feedback | Quality window | Test results |
 
+## The time dimension: SDLC lifecycle
+
+The five subsystems are a *structural* dimension — they describe what mechanisms exist. Osmani adds a *time* dimension: every healthy engineering organization runs a lifecycle — Define → Plan → Build → Verify → Review → Ship — and agents default to skipping most of it. The harness must force the agent through the same stages a senior engineer forces themselves through. ([[agent-skills-osmani]])
+
+The Ralph loop fuses both dimensions: it has an implicit lifecycle (plan → build → validate), while using the plan file as State and tests as Feedback. Structure guarantees *what mechanisms exist*; lifecycle guarantees *when they're used*.
+
+## Skills as an instructions sublayer
+
+Within the Instructions subsystem, Osmani positions skills as a distinct layer — reusable workflow fragments progressively disclosed into the system prompt:
+
+| Layer | Role |
+|---|---|
+| AGENTS.md | Rolling rulebook |
+| hooks | Deterministic execution layer |
+| tools | Actions the agent can take |
+| session log | Persistent memory |
+| skills | Senior engineer workflows |
+
+Skills differ from AGENTS.md rules in shape: a skill is an executable workflow with checkpoints and exit criteria, not a declarative rule. This is [[process-over-prose]] applied to the Instructions subsystem. ([[agent-skills-osmani]])
+
 ## ROI ranking
 
 Adding subsystems incrementally, success rate: 20% → 60% (instructions) → 80% (feedback) → 80-100% (state). **Feedback has the highest ROI.** ([[lecture-02-what-harness-actually-is]])
@@ -47,3 +67,4 @@ Anthropic's controlled experiment: same model (Opus 4.5), same prompt. Without h
 - [[sandbox-for-agents]] — the environment subsystem's security boundary
 - [[anti-rationalization]] — pre-empting the agent's self-justification for skipping rules
 - [[process-over-prose]] — instructions should be workflows, not reference docs
+- [[agent-skills-osmani]] — SDLC lifecycle as time dimension; skills as an Instructions sublayer

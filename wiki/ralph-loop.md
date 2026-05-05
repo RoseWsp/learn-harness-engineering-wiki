@@ -56,4 +56,8 @@ The Ralph loop is an instance of the [[diagnostic-loop]] pattern: each iteration
 
 The antidote to a bad plan isn't a smarter agent — it's `rm IMPLEMENTATION_PLAN.md` and one more planning loop.
 
+## Why Ralph needs skills
+
+The Ralph loop is inherently long-running — potentially dozens of iterations over hours. Osmani's observation applies directly: "A 10-minute agent that skips tests creates a bug. A 30-hour agent that skips tests creates an archaeological debugging project." Ralph mitigates this through structure (each iteration starts fresh, backpressure gates every commit), but it still depends on AGENTS.md containing the right rules. Skills — reusable workflow fragments with exit criteria — are the next level: they encode *what the senior engineer would do at each phase*, not just what the agent is allowed to do. The SDLC lifecycle (Define → Plan → Build → Verify → Review → Ship) is implicit in Ralph's PLANNING/BUILDING modes; skills make it explicit. ([[agent-skills-osmani]])
+
 ([[ralph-playbook]])

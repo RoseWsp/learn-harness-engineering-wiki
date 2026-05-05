@@ -13,6 +13,12 @@ An agent with no WIP limit will start 5 features and finish 0. The prompt "imple
 
 More code doesn't mean more done. Focused completion beats scattered activity. ([[lecture-07-task-boundaries]])
 
+## The 100-line PR principle
+
+Google's code review standard: PRs around 100 lines, with Critical / Nit / Optional / FYI severity labels. Large PRs aren't reviewed carefully — they get rubber-stamped. The same applies to agent tasks: a task that touches 10 files in one go won't be properly verified. WIP=1 forces small, reviewable units of work. ([[agent-skills-osmani]])
+
+Chesterton's Fence is the corollary: don't remove code you don't fully understand. Agents that overreach often delete or refactor adjacent systems without understanding why they exist. Scope discipline — "only touch what you were asked to touch" — is the operational form of Chesterton's Fence. ([[agent-skills-osmani]])
+
 ## How to enforce
 
 Put the WIP limit in CLAUDE.md as an explicit rule. The [[feature-list]] tracks state — if any feature is "active," no new feature can be started until it reaches "passing."

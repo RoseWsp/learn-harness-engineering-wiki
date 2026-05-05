@@ -1,5 +1,23 @@
 # Log
 
+## [2026-05-05 14:45] digest | Agent Skills (Addy Osmani)
+
+Deeper propagation of [[agent-skills-osmani]] into existing wiki pages. No new pages created — all claims found canonical homes in existing pages.
+
+**Existing pages updated:**
+- harness-defined — added SDLC lifecycle as time dimension + skills as Instructions sublayer
+- context-anxiety — added long-running amplification section (10-min vs 30-hour agent)
+- ralph-loop — added "Why Ralph needs skills" section linking SDLC lifecycle to PLANNING/BUILDING modes
+- e2e-vs-unit-testing — added Google-scale testing practices section (Beyoncé Rule, DAMP > DRY)
+- wip-limit — added 100-line PR principle + Chesterton's Fence
+- backpressure-signals — added Google-scale engineering as backpressure section (Hyrum's Law, Shift Left, code-as-liability)
+- agents-md — added five non-negotiable principles section (surface assumptions, push back, scope discipline)
+- overconfidence-bias — added "agent should push back" countermeasure
+- agent-native-tooling — added skill portability as middle path between bifurcation and fragmentation
+- agent-skills-osmani (source) — added propagation map linking to updated pages
+
+**No contradictions flagged.** Judgment call: "push back" principle is novel but doesn't warrant its own page — it's a behavior pattern within overconfidence-bias and agents-md, not a standalone concept.
+
 ## [2026-05-04 22:30] ingest | Learn Harness Engineering course (12 lectures)
 
 Ingested the full Learn Harness Engineering course from WalkingLabs (raw/ directory). Created source-summary pages for all 12 lectures, plus 18 concept/entity pages covering core harness engineering themes. Built home.md with SVG concept map, index.md, and log.md.

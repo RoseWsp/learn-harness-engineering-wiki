@@ -27,6 +27,18 @@ AGENTS.md (80 lines)
 
 The agent reads the routing file, then follows links to only the relevant topic docs. This is [[progressive-disclosure]]: overview first, details on demand.
 
+## The five non-negotiable principles
+
+Osmani distills five principles that should go into any AGENTS.md, regardless of project: ([[agent-skills-osmani]])
+
+1. **Surface assumptions before building.** Silently held wrong assumptions are the most common failure mode. If the agent doesn't know a constraint, it can't respect it.
+2. **Stop and ask when requirements conflict.** Don't guess. A 30-second clarification beats a 30-minute rework.
+3. **Push back when necessary.** An agent, like an engineer, is not a yes-machine. If a request would compromise quality, the agent should say so.
+4. **Prefer simple, obvious solutions.** Clever tricks are expensive — in maintenance, in debugging, in reviewer time.
+5. **Only touch what you were asked to touch.** Scope discipline is the single biggest factor in whether an agent's PR gets merged or reverted.
+
+Principles 1 and 2 are about *information quality* — they address the same problem as the [[cold-start-test]] (does the agent know what it needs to know?). Principle 3 is novel: most harnesses assume the agent should comply, but a senior engineer pushes back on bad requirements. Principle 5 is [[wip-limit]] at the PR level. Principle 4 is the antidote to agent overengineering.
+
 ## Each rule should have
 
 - **Source**: Why this rule exists

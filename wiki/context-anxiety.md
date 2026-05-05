@@ -13,6 +13,10 @@ Context windows are finite. As the agent approaches the limit, it experiences "a
 
 The fix isn't a bigger context window (though that helps). The fix is structured state persistence — [[progress-md]], [[feature-list]], git checkpoints — so the agent knows it can pick up where it left off in a new session. ([[lecture-05-continuity]])
 
+## Long-running amplification
+
+Context anxiety is a *rate* problem — the longer the session, the more it compounds. Osmani frames this sharply: "A 10-minute agent that skips tests creates a bug. A 30-hour agent that skips tests creates an archaeological debugging project." The longer the run, the more senior-engineer scaffolding must be *enforced* rather than *suggested*. Short sessions survive on discipline; long sessions require structure. ([[agent-skills-osmani]])
+
 ## Related
 
 - [[overconfidence-bias]] — agents also overestimate completion
@@ -20,3 +24,4 @@ The fix isn't a bigger context window (though that helps). The fix is structured
 - [[subagent-scheduling]] — keeping the main context lean avoids anxiety triggers
 - [[lecture-05-continuity]] — the full argument on continuity artifacts
 - [[lecture-09-premature-victory]] — premature completion as a harness problem
+- [[agent-skills-osmani]] — long-running agents amplify every shortcut
