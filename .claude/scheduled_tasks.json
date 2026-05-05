@@ -5,11 +5,11 @@
       "cron": "3 9 * * *",
       "prompt": "运行wiki每日摘要推送：cd d:/github.com/wikirose && python scripts/daily-digest.py。脚本会自动从 .env 读取 SCT_TOKEN，调用Claude分析昨天wiki变更并生成摘要，然后通过Server酱推送到微信。完成后报告推送结果。",
       "createdAt": 1777807261527,
+      "lastFiredAt": 1777951040815,
       "recurring": true,
       "createdBySessionId": "81331ea3-da5b-477b-96d0-f045f50ab452",
       "createdByPid": 4412,
-      "createdByProcStart": "639134216804276630",
-      "lastFiredAt": 1777868635560
+      "createdByProcStart": "639134216804276630"
     }
   ]
 }

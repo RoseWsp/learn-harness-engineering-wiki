@@ -27,5 +27,7 @@ VCR = features passing e2e / features started. Block new tasks if VCR < 1.0. ([[
 - [[scope-surface]] — the DAG of task states
 - [[ralph-loop]] — WIP=1 enforced naturally: one task per loop iteration
 - [[story-map-slc]] — WIP=1 at the release level: one SLC slice at a time
+- [[agent-skills-osmani]] — Osmani's "scope discipline": only touch what you were asked to touch
+- [[anti-rationalization]] — pre-empting excuses for scope creep
 - [[lecture-07-task-boundaries]] — the full argument
 - [[lecture-09-premature-victory]] — why "done" isn't done until verification passes

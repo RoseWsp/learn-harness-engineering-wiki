@@ -45,3 +45,5 @@ Anthropic's controlled experiment: same model (Opus 4.5), same prompt. Without h
 - [[ralph-loop]] — a concrete implementation of all five subsystems as a bash loop
 - [[backpressure-signals]] — the feedback subsystem made operational: tests, lints, and LLM-as-judge
 - [[sandbox-for-agents]] — the environment subsystem's security boundary
+- [[anti-rationalization]] — pre-empting the agent's self-justification for skipping rules
+- [[process-over-prose]] — instructions should be workflows, not reference docs

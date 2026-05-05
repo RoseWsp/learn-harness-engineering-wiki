@@ -187,4 +187,4 @@ AI 时代码农的核心能力是**双轨**的：
 
 ---
 
-[[harness-defined]] · [[agents-md]] · [[e2e-vs-unit-testing]] · [[progress-md]] · [[wip-limit]] · [[pass-state-gating]] · [[three-layer-termination]] · [[diagnostic-loop]] · [[ralph-loop]] · [[subagent-scheduling]] · [[backpressure-signals]] · [[harness-rot]] · [[cold-start-test]] · [[lost-in-middle-effect]] · [[overconfidence-bias]] · [[premature-victory]]
+[[harness-defined]] · [[agents-md]] · [[e2e-vs-unit-testing]] · [[progress-md]] · [[wip-limit]] · [[pass-state-gating]] · [[three-layer-termination]] · [[diagnostic-loop]] · [[ralph-loop]] · [[subagent-scheduling]] · [[backpressure-signals]] · [[harness-rot]] · [[cold-start-test]] · [[lost-in-middle-effect]] · [[overconfidence-bias]] · [[premature-victory]] · [[anti-rationalization]] · [[process-over-prose]]

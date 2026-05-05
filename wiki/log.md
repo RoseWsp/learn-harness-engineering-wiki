@@ -53,3 +53,23 @@ Ingested two SkipLabs articles (Hugo Venturini) that challenge the current harne
 - agents-md → codegen-as-compiler-output (formal spec as next step)
 - backpressure-signals → codegen-as-compiler-output (AI-checks-AI as first-class CI)
 - harness-deliberate-practice → lights-out-challenge (code judgment long-term positioning)
+
+## [2026-05-05 14:30] ingest | Agent Skills (Addy Osmani)
+
+Ingested Addy Osmani's "Agent Skills" blog post — engineering disciplines for AI coding agents organized as workflow-first skills with anti-rationalization tables. Created 1 source-summary page and 2 concept pages.
+
+**Pages created:**
+- Source: agent-skills-osmani
+- Concepts: anti-rationalization, process-over-prose
+
+**Cross-links added to existing pages:**
+- harness-defined → anti-rationalization, process-over-prose
+- progressive-disclosure → process-over-prose, agent-skills-osmani
+- agents-md → process-over-prose, anti-rationalization
+- pass-state-gating → anti-rationalization, agent-skills-osmani
+- wip-limit → agent-skills-osmani, anti-rationalization
+- overconfidence-bias → anti-rationalization, agent-skills-osmani
+- backpressure-signals → agent-skills-osmani (new paragraph on verification as exit condition)
+- three-layer-termination → anti-rationalization, agent-skills-osmani
+- harness-deliberate-practice → anti-rationalization, process-over-prose
+- home.md → new section "Fighting agent self-justification" + process-over-prose in instruction problem

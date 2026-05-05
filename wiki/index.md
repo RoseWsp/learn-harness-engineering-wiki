@@ -1,5 +1,7 @@
 # Index
 
+- [[agent-skills-osmani]] — Osmani's Agent Skills: workflow-first SDLC disciplines for AI agents, anti-rationalization, and Google engineering practices ported to harness
+
 ## Sources
 
 - [[lecture-01-capable-agents-still-fail]] — Strong models don't mean reliable execution; the harness makes the difference
@@ -25,6 +27,7 @@
 - [[agents-md]] — The landing page for agents; a routing file, not a manual
 - [[feature-list]] — The foundational data structure for scope control
 - [[progressive-disclosure]] — Overview first, details on demand
+- [[process-over-prose]] — Workflows with checkpoints beat reference articles for agent instructions
 - [[wip-limit]] — Work-in-progress limit; WIP=1 is the safest default
 - [[pass-state-gating]] — Only the harness marks features as "passing"
 - [[three-layer-termination]] — Syntax → tests → e2e; all three must pass
@@ -51,6 +54,7 @@
 
 - [[e2e-vs-unit-testing]] — Unit tests miss component boundary defects
 - [[backpressure-signals]] — Downstream steering: tests, lints, and LLM-as-judge
+- [[anti-rationalization]] — Pre-empting the agent's self-justification for skipping rules
 - [[acceptance-driven-backpressure]] — Derive test requirements from acceptance criteria before implementation
 - [[sprint-contract]] — Pre-coding agreement on scope, standards, exclusions
 - [[evaluator-rubric]] — Structured quality scoring framework

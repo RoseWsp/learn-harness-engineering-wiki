@@ -47,4 +47,6 @@ Backpressure is the [[harness-defined|Feedback subsystem]] made operational. Wit
 
 SkipLabs argues that [[codegen-as-compiler-output|AI-checks-AI pipelines should be first-class CI infrastructure]], not optional enhancements. When agents produce plausible-but-wrong code at 50x the rate of humans, the test suite that caught human mistakes needs to be substantially more comprehensive. LLM-as-judge graduates from "nice-to-have" to "non-negotiable."
 
+Osmani's Agent Skills encode the same principle: every skill ends with concrete evidence (test passes, build clean, runtime trace shows expected behavior, reviewer signs off). "Looks right" is never enough. Skills make backpressure the exit condition of every workflow. ([[agent-skills-osmani]])
+
 ([[ralph-playbook]])

@@ -38,3 +38,5 @@ AGENTS.md (routing, ~80 lines)
 - [[lost-in-middle-effect]] — why middle content gets ignored
 - [[harness-defined]] — progressive disclosure applies to the Instructions subsystem
 - [[subagent-scheduling]] — progressive disclosure at runtime: main context sees only coordination, details loaded on demand via subagents
+- [[process-over-prose]] — progressive disclosure controls how much; process-over-prose controls what shape (workflow vs article)
+- [[agent-skills-osmani]] — Osmani's meta-skill as a router: 20 skills, only relevant ones loaded per phase

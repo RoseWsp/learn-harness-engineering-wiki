@@ -106,6 +106,12 @@ Six failure patterns, all harness-induced: underspecified tasks, implicit conven
 
 A 600-line AGENTS.md is worse than a 60-line one. The [[lost-in-middle-effect]] means rules in the middle are ignored. The fix is [[progressive-disclosure]]: a short routing file linking to topic docs. ([[lecture-04-giant-instruction-file-fails]])
 
+But even short instructions fail if they're the wrong shape. [[process-over-prose|Process beats prose]]: a 400-word workflow with checkpoints and exit criteria is more effective than a 400-word reference article. The agent can execute a workflow and produce verifiable evidence; it can only "read" an article and then skip the work. Rules should tell the agent what to *do*, not what to *know*.
+
+## Fighting agent self-justification
+
+Agents don't just skip rules — they generate convincing explanations for why skipping is justified this time. [[overconfidence-bias]] is the root cause; [[anti-rationalization]] is the countermeasure. Pre-empt the agent's excuses with a table: for each common shortcut ("too simple for a spec", "tests later"), write the rebuttal upfront. This works at the decision layer, complementing structural defenses like [[pass-state-gating]] (structure layer) and [[three-layer-termination]] (result layer). Three layers of defense against the same failure: the agent rationalizing its way past the rules. ([[agent-skills-osmani]])
+
 ## Scope and completion
 
 Agents overreach (start 5 features, finish 0) and under-finish (declare victory too early). [[wip-limit|WIP=1]] prevents overreach. [[pass-state-gating]] prevents self-grading. [[three-layer-termination|Three-layer verification]] catches what the agent misses. ([[lecture-07-task-boundaries]], [[lecture-08-feature-lists]], [[lecture-09-premature-victory]])
@@ -150,4 +156,4 @@ Three implications shake the current harness model: (1) **"Human reads code" is 
 
 This wiki is based on the [Learn Harness Engineering](https://walkinglabs.github.io/learn-harness-engineering/) course by WalkingLabs, which synthesizes research from [OpenAI](https://openai.com/index/harness-engineering/) and [Anthropic](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents).
 
-[[lecture-01-capable-agents-still-fail]] · [[lecture-02-what-harness-actually-is]] · [[lecture-03-repo-as-system-of-record]] · [[lecture-04-giant-instruction-file-fails]] · [[lecture-05-continuity]] · [[lecture-06-initialization-phase]] · [[lecture-07-task-boundaries]] · [[lecture-08-feature-lists]] · [[lecture-09-premature-victory]] · [[lecture-10-e2e-testing]] · [[lecture-11-observability]] · [[lecture-12-clean-state]] · [[ralph-playbook]] · [[skiplabs-codegen-as-compiler]] · [[skiplabs-future-of-tools]]
+[[lecture-01-capable-agents-still-fail]] · [[lecture-02-what-harness-actually-is]] · [[lecture-03-repo-as-system-of-record]] · [[lecture-04-giant-instruction-file-fails]] · [[lecture-05-continuity]] · [[lecture-06-initialization-phase]] · [[lecture-07-task-boundaries]] · [[lecture-08-feature-lists]] · [[lecture-09-premature-victory]] · [[lecture-10-e2e-testing]] · [[lecture-11-observability]] · [[lecture-12-clean-state]] · [[ralph-playbook]] · [[skiplabs-codegen-as-compiler]] · [[skiplabs-future-of-tools]] · [[agent-skills-osmani]]

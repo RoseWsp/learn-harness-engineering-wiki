@@ -24,4 +24,6 @@ Without pass-state gating, agents mark features as "done" based on code inspecti
 - [[three-layer-termination]] — the verification that must pass
 - [[acceptance-driven-backpressure]] — pre-defining what "passing" means before implementation
 - [[ralph-loop]] — pass-state gating via the plan file: only updated after tests pass
+- [[anti-rationalization]] — pre-empting the agent's excuses for self-promoting features
+- [[agent-skills-osmani]] — Osmani: "verification is non-negotiable; every skill ends with concrete evidence"
 - [[lecture-08-feature-lists]] — the full argument

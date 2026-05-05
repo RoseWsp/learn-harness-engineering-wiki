@@ -32,4 +32,6 @@ When any layer fails, the error message should tell the agent exactly what to fi
 - [[pass-state-gating]] — the harness enforces termination
 - [[backpressure-signals]] — the downstream mechanisms that implement each layer
 - [[ralph-loop]] — three-layer termination in the Ralph pattern: commit only when tests pass
+- [[anti-rationalization]] — pre-empting the agent's excuses for skipping layers
+- [[agent-skills-osmani]] — Osmani: "verification is non-negotiable; 'looks right' is never enough"
 - [[lecture-09-premature-victory]] — the full argument

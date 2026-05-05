@@ -24,4 +24,6 @@ Anthropic's experiment: single agent says "done" in 20 min, game is broken. Thre
 - [[three-layer-termination]] — the three gates for completion
 - [[backpressure-signals]] — downstream verification that counteracts overconfidence
 - [[acceptance-driven-backpressure]] — pre-defining "done" before the agent starts
+- [[anti-rationalization]] — pre-empting the agent's self-justification for skipping verification
+- [[agent-skills-osmani]] — Osmani: agents rationalize skipping work; anti-rationalization tables fight this
 - [[lecture-09-premature-victory]] — the full argument

@@ -53,3 +53,5 @@ The BUILDING prompt says "run tests" generically; AGENTS.md specifies the actual
 - [[cold-start-test]] — the five questions AGENTS.md must answer
 - [[ralph-loop]] — where AGENTS.md is loaded every iteration
 - [[codegen-as-compiler-output]] — AGENTS.md as natural language is the "PHP of harness"; formal specifications are the next step
+- [[process-over-prose]] — AGENTS.md should be workflows with checkpoints, not reference articles
+- [[anti-rationalization]] — anti-rationalization tables in AGENTS.md pre-empt the agent's excuses for skipping rules
